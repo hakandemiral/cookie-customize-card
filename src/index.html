@@ -7,6 +7,63 @@
     <link rel="stylesheet" href="stylesheets/style.min.css">
 </head>
 <body>
+
+<div class="component--cookie-popup">
+    <input type="checkbox" id="cookies">
+
+    <div class="is-allow">
+        <h3>Do you allow us to use cookies?</h3>
+        <p>We use cookies to learn where you struggle when you’re navigating our website and fix them for your future visit.</p>
+        <div class="button-area">
+            <button class="outlined"><label for="cookies">Customize</label></button>
+            <button class="filled">Allow all</button>
+            <button class="clean">Decline all</button>
+        </div>
+    </div>
+
+    <div class="customize">
+        <div class="head">
+            <label for="cookies"></label>
+            Customize your prefferences
+        </div>
+
+        <div class="content">
+
+            <form class="settings">
+                <div class="switch">
+                    <span>Necessary</span>
+                    <input type="checkbox" id="necessary" checked>
+                    <label for="necessary"></label>
+                </div>
+
+                <div class="switch">
+                    <span>Functionality</span>
+                    <input type="checkbox" id="functionality">
+                    <label for="functionality"></label>
+                </div>
+
+                <div class="switch">
+                    <span>Statistics</span>
+                    <input type="checkbox" id="statistics">
+                    <label for="statistics"></label>
+                </div>
+
+                <div class="switch">
+                    <span>Marketing</span>
+                    <input type="checkbox" id="marketing">
+                    <label for="marketing"></label>
+                </div>
+            </form>
+
+            <div class="button-area">
+                <span class="clean">View details</span>
+                <button class="filled">Save and submit</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
     <script src="javascripts/app.min.js"></script>
 </body>
 </html>

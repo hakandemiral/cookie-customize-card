@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Merriweather:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  overflow-scrolling: touch;
+  font-family: 'IBM Plex Sans', serif;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+body {
+  padding: 50px;
+  background-color: #F8FAFF;
+}
+
+.component {
+  &--cookie-popup {
+    $header-font: 'Merriweather', sans-serif;
+    $black: #181339;
+
+    width: 598px;
+    height: 417px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    .is-allow {
+      width: 100%;
+      height: 100%;
+      padding: 70px 75px;
+      text-align: center;
+
+      h3 {
+        font-family: $header-font;
+        font-weight: 700;
+        font-size: 24px;
+        color: $black;
+        margin-bottom: 30px;
+      }
+
+      p {
+        line-height: 26px;
+        color: $black;
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 54px;
+      }
+
+      .button-area {
+        width: 339px;
+        height: auto;
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        label {
+          cursor: pointer;
+        }
+
+        button{
+          border-radius: 5px;
+          width: 152px;
+          padding: 16px 0;
+          background: none;
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 15px;
+          cursor: pointer;
+
+          &:nth-child(2) {
+            margin-left: auto;
+          }
+
+
+          &.outlined {
+            border: solid 1px #22185E;
+            color: $black;
+          }
+
+          &.filled {
+            background: linear-gradient(35deg ,#FF8888, #FF7BB1);
+            color: #fff;
+          }
+
+          &.clean {
+            color: rgba($black, .5);
+          }
+        }
+      }
+    }
+
+    .customize {
+      width: 100%;
+      height: 100%;
+      display: none;
+
+      .head {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        font-family: $header-font;
+        font-size: 24px;
+        font-weight: 700;
+        color: $black;
+        border-bottom: solid 2px #F8FAFF;
+
+        label {
+          width: 44px;
+          height: 44px;
+          background: url("../assets/images/back-arrow.svg") no-repeat 0;
+          margin: 0 30px 0 45px;
+          cursor: pointer;
+        }
+      }
+
+      .content {
+        width: 100%;
+        height: calc(100% - 100px);
+        padding: 50px;
+
+        .settings {
+          width: 100%;
+          height: 106px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-content: space-between;
+
+          .switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 210px;
+
+            span {
+              font-size: 18px;
+              font-weight: 400;
+              color: $black;
+            }
+
+            input {
+              display: none;
+
+              &:checked + label {
+                background-image: linear-gradient(90deg ,#8AFFD0, #6FC6E8);
+
+                &::before {
+                  transform: translateX(35px);
+                }
+              }
+            }
+
+            label {
+              width: 75px;
+              height: 38px;
+              border-radius: 19px;
+              background-image: linear-gradient(#E5EAF6, #F8FAFF);
+              display: flex;
+              align-items: center;
+              padding: 0 4px;
+              cursor: pointer;
+              transition: 150ms background-image;
+
+              &::before {
+                content: '';
+                display: block;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: #fff;
+                box-shadow: 0 9px 10px -5px rgba(#8598C5, .4);
+                transition: 200ms transform;
+              }
+            }
+          }
+        }
+        .button-area {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 70px;
+
+          span {
+            color: rgba(#181339, .5);
+            cursor: pointer;
+          }
+
+          button {
+            width: 176px;
+            height: 55px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            background: linear-gradient(35deg, #FF8888, #FF7BB1);
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    #cookies:checked {
+      &+.is-allow {
+        display: none;
+      }
+
+      &~.customize {
+        display: block;
+      }
+    }
+  }
+}
